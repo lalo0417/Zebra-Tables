@@ -1,0 +1,80 @@
+caption{
+    font-size: 2rem;
+    background-color: hsl(33, 100%, 50%);
+/*    Caption stuck on bottom, unsure how to fix */
+}
+#wrapper{
+    width: 80%;
+    margin: auto;
+}
+table{
+    width: 100%;
+    max-width: 1500px;
+    min-width: 600px;
+    caption-side: bottom; 
+    empty-cells: show; 
+    overflow: hidden;
+    z-index: 1;
+}
+th{
+    background-color: hsl(33, 100%, 50%);
+    
+}
+td, th{
+    position: relative;
+    border: 1px dotted hsl(33, 100%, 50%);
+}
+td, th, tr{
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    outline: 0;
+}
+td:hover::before,
+th:hover::before{
+    content: "";
+    position: absolute;
+    background-color: hsl(31, 100%, 80%);
+    left: 0;
+    top: -5000px;
+    height: 100%;
+    width: 10000px;
+    z-index: -1;
+}
+td:hover::after,
+th:hover::after{
+    content: "";
+    position: absolute;
+    background-color: hsl(31, 100%, 80%);
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
+}
+
+tbody tr:nth-child( odd ) th::before{ 
+    background-color: hsl(40, 100%, 65%); 
+    z-index: -5;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 110%;
+    width: 10000px;
+}
+tbody tr:nth-child( even ) th::before{ 
+    background-color: hsl(40, 100%, 80%);
+    z-index: -5;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 110%;
+    width: 10000px;
+}
+tr:hover{
+    background-color: hsl(31, 100%, 80%);
+}
+td:hover{
+    background-color: hsl(31, 100%, 65%);
+}
